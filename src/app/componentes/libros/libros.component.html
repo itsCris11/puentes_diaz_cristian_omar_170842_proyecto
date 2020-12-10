@@ -1,0 +1,38 @@
+<div class="contenedor">
+  Libros
+  <br>
+  <mat-form-field>
+    <input matInput [(ngModel)]="lib.idU" type="string" placeholder="ID">
+  </mat-form-field><br>
+  <mat-form-field>
+      <input matInput [(ngModel)]="lib.nombre" type="string" placeholder="Nombre del libro">
+  </mat-form-field><br>
+  <mat-form-field>
+      <input matInput [(ngModel)]="lib.categoria" type="string" placeholder="Categoria de libro">
+    </mat-form-field><br>
+    <mat-form-field>
+        <input matInput [(ngModel)]="lib.autor" type="string" placeholder="Autor libro">
+    </mat-form-field><br>
+    <mat-form-field>
+        <input matInput [(ngModel)]="lib.editorial" type="string" placeholder="Editorial libro">
+    </mat-form-field><br>
+    <mat-form-field>
+        <input matInput [(ngModel)]="lib.estado" type="boolean" placeholder="Estado">
+    </mat-form-field><br>
+    <mat-form-field>
+      <input matInput [(ngModel)]="lib.fecha" type="string" placeholder="Año de lanzamiento">
+  </mat-form-field><br>
+    <mat-form-field>
+      <mat-select placeholder="Opciones" [(ngModel)]="seleccionada" name="operacion">
+        <mat-option *ngFor="let op of operaciones" [value]="op.valor">
+          {{op.muestraValor}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <div class="">
+      <button mat-raised-button color="primary" (click)="agregarlibro()">Confirmar</button>
+      <p>{{resultado}}</p>
+    </div>
+</div>
+
+
